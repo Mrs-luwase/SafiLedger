@@ -1,4 +1,4 @@
-import Foundation
+import SwiftUI
 
 class LedgerViewModel: ObservableObject {
     @Published var transactions: [Transaction] = [
@@ -9,16 +9,17 @@ class LedgerViewModel: ObservableObject {
         Transaction(id: 5, amount: 60000,   kind: "MoMo",     hour: 14, status: .cleared)
     ]
 
-    func flagAsSuspicious(_ transaction: Transaction) {
-        if let i = transactions.firstIndex(where: { $0.id == transaction.id }) {
-            transactions[i].flag()
-        }
-    }
     var totalBalance: Int {
-    transactions.reduce(0) { $0 + $1.amount }
+        transactions.reduce(0) { $0 + $1.amount }
     }
 
     var flaggedCount: Int {
         transactions.filter { $0.status == .flagged }.count
+    }
+
+    func flagAsSuspicious(_ transaction: Transaction) {
+        if let i = transactions.firstIndex(where: { $0.id == transaction.id }) {
+            transactions[i].flag()
+        }
     }
 }
