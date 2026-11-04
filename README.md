@@ -1,4 +1,4 @@
-# SafiLedger
+# Mini Project | SafiLedger
 
 ![Swift](https://img.shields.io/badge/Swift-F05138?logo=swift&logoColor=white)
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-0A84FF?logo=swift&logoColor=white)
@@ -63,4 +63,4 @@ Requires a Mac with Xcode.
 Swift, SwiftUI, MVVM
 
 ## Author
-Your Full Name, Student ID 27064
+Leiss Uwase, Student ID 27064
