@@ -14,4 +14,11 @@ class LedgerViewModel: ObservableObject {
             transactions[i].flag()
         }
     }
+    var totalBalance: Int {
+    transactions.reduce(0) { $0 + $1.amount }
+    }
+
+    var flaggedCount: Int {
+        transactions.filter { $0.status == .flagged }.count
+    }
 }

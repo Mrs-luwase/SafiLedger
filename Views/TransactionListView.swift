@@ -5,6 +5,15 @@ struct TransactionListView: View {
 
     var body: some View {
         NavigationStack {
+            VStack {
+                Text("Balance: \(signed(vm.totalBalance))")
+                    .font(.title2).bold()
+                Text("\(vm.flaggedCount) flagged")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+           }
+           .padding(.vertical, 8)
+
             List(vm.transactions) { transaction in
                 NavigationLink(value: transaction) {
                     HStack {
